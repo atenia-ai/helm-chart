@@ -10,5 +10,5 @@ mv
 ```
 
 ```bash
-helm repo index ./docs --url https://chart.atenia.ai/helm-chart
+helm repo index ./docs --url https://chart.atenia.ai/
 ```

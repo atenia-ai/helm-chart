@@ -2,22 +2,22 @@ apiVersion: v1
 entries:
   fluvio-app:
   - apiVersion: v2
-    created: "2024-09-04T08:49:48.542286+02:00"
+    created: "2024-09-04T09:44:09.475433+02:00"
     description: A Helm chart for Fluvio
     digest: 34a7a20778631c8ba38aaea98065fe0644b4808c87d9114357b5994c2a83dc75
     name: fluvio-app
     type: application
     urls:
-    - https://chart.atenia.ai/helm-chart/fluvio-app-0.9.3.tgz
+    - https://chart.atenia.ai/fluvio-app-0.9.3.tgz
     version: 0.9.3
   fluvio-sys:
   - apiVersion: v2
-    created: "2024-09-04T08:49:48.542608+02:00"
+    created: "2024-09-04T09:44:09.475935+02:00"
     description: A Helm chart for Fluvio
     digest: 6155f8aae1d1c046340861c630c7557bf1fb8b2d860b9e4c56e1cbea89ba140c
     name: fluvio-sys
     type: application
     urls:
-    - https://chart.atenia.ai/helm-chart/fluvio-sys-0.9.19.tgz
+    - https://chart.atenia.ai/fluvio-sys-0.9.19.tgz
     version: 0.9.19
-generated: "2024-09-04T08:49:48.541658+02:00"
+generated: "2024-09-04T09:44:09.474329+02:00"
