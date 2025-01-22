@@ -1,0 +1,8 @@
+---
+# Source: hik8s-system/templates/namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: hik8s-agents
+  labels:
+    pod-security.kubernetes.io/enforce: privileged
