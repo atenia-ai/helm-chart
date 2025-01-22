@@ -16,16 +16,17 @@ spec:
     spec:
       containers:
       - name: watchd
-        image: ghcr.io/hik8s/watchd:0.1.1
+        image: ghcr.io/hik8s/watchd:0.2.10
+        imagePullPolicy: IfNotPresent
         env:
         - name: RUST_LOG
-          value: "info"
+          value: info
         - name: HIK8S_HOST
-          value: "stag.api.hik8s.ai"
+          value: api.hik8s.ai
         - name: HIK8S_PORT
-          value: "443"
+          value: 443
         - name: AUTH0_AUDIENCE
-          value: "api.hik8s.ai"
+          value: api.hik8s.ai
         - name: CLIENT_ID
           valueFrom:
             secretKeyRef:

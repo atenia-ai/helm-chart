@@ -3,7 +3,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: api-resources-reader-stag
+  name: api-viewer
 rules:
 - apiGroups: [""]
   resources: ["pods", "services", "namespaces", "nodes", "serviceaccounts", "events"]
@@ -64,12 +64,12 @@ rules:
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: api-viewer-binding-stag
+  name: api-viewer
 subjects:
 - kind: ServiceAccount
   name: api-viewer
-  namespace: hik8s-agents-stag
+  namespace: hik8s-system
 roleRef:
   kind: ClusterRole
-  name: api-resources-reader-stag
+  name: api-viewer
   apiGroup: rbac.authorization.k8s.io

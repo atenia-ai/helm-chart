@@ -13,31 +13,32 @@ spec:
     spec:
       containers:
       - name: logd
-        image: ghcr.io/hik8s/logd:0.2.7
+        image: {{ .Values.image.registry }}/logd:{{ .Values.logd.imageVersion | default .Chart.AppVersion }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
         - name: RUST_LOG
-          value: "info"
+          value: {{ .Values.logd.logLevel }}
         - name: HIK8S_HOST
-          value: "stag.api.hik8s.ai"
+          value: {{ .Values.dataIntake.endpoint }}
         - name: HIK8S_PORT
-          value: "443"
+          value: {{ .Values.dataIntake.port }}
         - name: AUTH0_AUDIENCE
-          value: "api.hik8s.ai"
+          value: {{ .Values.auth.audience }}
         - name: CLIENT_ID
           valueFrom:
             secretKeyRef:
-              name: hik8s-credentials
-              key: clientid
+              name: {{ .Values.auth.secretName }}
+              key: {{ .Values.auth.secretKeys.clientId }}
         - name: CLIENT_SECRET
           valueFrom:
             secretKeyRef:
-              name: hik8s-credentials
-              key: clientsecret
+              name: {{ .Values.auth.secretName }}
+              key: {{ .Values.auth.secretKeys.clientSecret }}
         - name: AUTH0_DOMAIN
           valueFrom:
             secretKeyRef:
-              name: hik8s-credentials
-              key: auth0domain
+              name: {{ .Values.auth.secretName }}
+              key: {{ .Values.auth.secretKeys.domain }}
         volumeMounts:
         - name: log-directory
           mountPath: /var/log/pods
