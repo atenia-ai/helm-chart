@@ -1,0 +1,33 @@
+# Default values
+
+dataIntake:
+  endpoint: api.hik8s.ai
+  port: 443
+
+auth:
+  audience: api.hik8s.ai
+  secretKeys:
+    clientId: clientid
+    clientSecret: clientsecret
+    domain: auth0domain
+  secretName: hik8s-credentials
+
+image:
+  registry: ghcr.io/hik8s
+  pullPolicy: IfNotPresent
+
+watchd:
+  imageVersion: 0.2.10
+  logLevel: info
+  nodeSelector: {}
+  rbac:
+    serviceAccountName: api-viewer
+    clusterRoleName: api-viewer
+    clusterRoleBindingName: api-viewer
+    suffix: ""
+
+
+logd:
+  imageVersion: 0.2.10
+  logLevel: info
+  nodeSelector: {}

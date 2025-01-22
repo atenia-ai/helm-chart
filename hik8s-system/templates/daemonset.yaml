@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: logd
+spec:
+  selector:
+    matchLabels:
+      name: logd
+  template:
+    metadata:
+      labels:
+        name: logd
+    spec:
+      containers:
+      - name: logd
+        image: {{ .Values.image.registry }}/logd:{{ .Values.logd.imageVersion | default .Chart.AppVersion }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: RUST_LOG
+          value: {{ .Values.logd.logLevel }}
+        - name: HIK8S_HOST
+          value: {{ .Values.dataIntake.endpoint }}
+        - name: HIK8S_PORT
+          value: {{ .Values.dataIntake.port }}
+        - name: AUTH0_AUDIENCE
+          value: {{ .Values.auth.audience }}
+        - name: CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.auth.secretName }}
+              key: {{ .Values.auth.secretKeys.clientId }}
+        - name: CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.auth.secretName }}
+              key: {{ .Values.auth.secretKeys.clientSecret }}
+        - name: AUTH0_DOMAIN
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.auth.secretName }}
+              key: {{ .Values.auth.secretKeys.domain }}
+        volumeMounts:
+        - name: log-directory
+          mountPath: /var/log/pods
+      tolerations:
+      - key: node-role.kubernetes.io/control-plane
+        effect: NoSchedule
+      volumes:
+      - name: log-directory
+        hostPath:
+          path: /var/log/pods
+          type: Directory

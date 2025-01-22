@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: watchd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: watchd
+  template:
+    metadata:
+      labels:
+        name: watchd
+    spec:
+      containers:
+      - name: watchd
+        image: {{ .Values.image.registry }}/watchd:{{ .Values.watchd.imageVersion | default .Chart.AppVersion }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        env:
+        - name: RUST_LOG
+          value: {{ .Values.watchd.logLevel }}
+        - name: HIK8S_HOST
+          value: {{ .Values.dataIntake.endpoint }}
+        - name: HIK8S_PORT
+          value: {{ .Values.dataIntake.port }}
+        - name: AUTH0_AUDIENCE
+          value: {{ .Values.auth.audience }}
+        - name: CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.auth.secretName }}
+              key: {{ .Values.auth.secretKeys.clientId }}
+        - name: CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.auth.secretName }}
+              key: {{ .Values.auth.secretKeys.clientSecret }}
+        - name: AUTH0_DOMAIN
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.auth.secretName }}
+              key: {{ .Values.auth.secretKeys.domain }}
+      serviceAccountName: {{ .Values.watchd.rbac.serviceAccountName }}

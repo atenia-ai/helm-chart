@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   fluvio-app:
   - apiVersion: v2
-    created: "2024-09-04T09:44:09.475433+02:00"
+    created: "2025-01-22T23:58:40.611877+01:00"
     description: A Helm chart for Fluvio
     digest: 34a7a20778631c8ba38aaea98065fe0644b4808c87d9114357b5994c2a83dc75
     name: fluvio-app
@@ -12,7 +12,7 @@ entries:
     version: 0.9.3
   fluvio-sys:
   - apiVersion: v2
-    created: "2024-09-04T09:44:09.475935+02:00"
+    created: "2025-01-22T23:58:40.61206+01:00"
     description: A Helm chart for Fluvio
     digest: 6155f8aae1d1c046340861c630c7557bf1fb8b2d860b9e4c56e1cbea89ba140c
     name: fluvio-sys
@@ -20,4 +20,14 @@ entries:
     urls:
     - https://chart.atenia.ai/fluvio-sys-0.9.19.tgz
     version: 0.9.19
-generated: "2024-09-04T09:44:09.474329+02:00"
+  hik8s-system:
+  - apiVersion: v1
+    created: "2025-01-22T23:58:40.61225+01:00"
+    description: A Helm chart for HiK8s system components
+    digest: 555306c75a9596ed3211a99a9a84f45dac42b873a9b13922c08243a25a1f31b1
+    name: hik8s-system
+    type: application
+    urls:
+    - https://chart.atenia.ai/hik8s-system-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-01-22T23:58:40.611556+01:00"
