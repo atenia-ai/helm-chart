@@ -28,6 +28,6 @@ watchd:
 
 
 logd:
-  imageVersion: 0.2.10
+  imageVersion: 0.2.7
   logLevel: info
   nodeSelector: {}

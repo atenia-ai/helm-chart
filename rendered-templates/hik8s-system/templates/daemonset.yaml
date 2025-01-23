@@ -4,6 +4,7 @@ apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: logd
+  namespace: hik8s-system
 spec:
   selector:
     matchLabels:
@@ -15,13 +16,13 @@ spec:
     spec:
       containers:
       - name: logd
-        image: ghcr.io/hik8s/logd:0.2.10
+        image: ghcr.io/hik8s/logd:0.2.7
         imagePullPolicy: IfNotPresent
         env:
-        - name: RUST_LOG
-          value: info
         - name: HIK8S_HOST
           value: api.hik8s.ai
+        - name: RUST_LOG
+          value: info
         - name: HIK8S_PORT
           value: 443
         - name: AUTH0_AUDIENCE

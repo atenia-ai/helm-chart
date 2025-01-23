@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: watchd
+  namespace: {{ .Release.Namespace }}
 spec:
   replicas: 1
   selector:
@@ -17,10 +18,10 @@ spec:
         image: {{ .Values.image.registry }}/watchd:{{ .Values.watchd.imageVersion | default .Chart.AppVersion }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
-        - name: RUST_LOG
-          value: {{ .Values.watchd.logLevel }}
         - name: HIK8S_HOST
           value: {{ .Values.dataIntake.endpoint }}
+        - name: RUST_LOG
+          value: {{ .Values.watchd.logLevel }}
         - name: HIK8S_PORT
           value: {{ .Values.dataIntake.port }}
         - name: AUTH0_AUDIENCE
