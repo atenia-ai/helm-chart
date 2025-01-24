@@ -5,6 +5,7 @@ dataIntake:
   port: 443
 
 auth:
+  createSecret: true
   audience: api.hik8s.ai
   credentials:
     clientId: ""
