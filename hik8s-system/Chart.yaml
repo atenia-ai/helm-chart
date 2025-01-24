@@ -2,4 +2,4 @@ apiVersion: v1
 name: hik8s-system
 description: A Helm chart for HiK8s system components
 type: application
-version: 0.1.2
+version: 0.1.3
