@@ -26,7 +26,8 @@ Render templates
 helm template hik8s-system ./hik8s-system --output-dir rendered-templates \
   -n hik8s-system \
   --set-string auth.credentials.clientId="abc" \
-  --set-string auth.credentials.clientSecret="abc"
+  --set-string auth.credentials.clientSecret="abc" \
+  --set-string auth.createSecret=false
 ```
 
 Manual installation from local
