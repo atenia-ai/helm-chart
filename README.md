@@ -25,3 +25,9 @@ Render templates
 ```bash
 helm template hik8s-system ./hik8s-system --output-dir rendered-templates -n hik8s-system
 ```
+
+Manual installation from local
+
+```bash
+helm install hik8s-system ./hik8s-system -n hik8s-agents-test --dry-run=client
+```
