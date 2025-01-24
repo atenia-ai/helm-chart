@@ -6,6 +6,10 @@ dataIntake:
 
 auth:
   audience: api.hik8s.ai
+  credentials:
+    clientId: ""
+    clientSecret: ""
+    domain: "dev-sksgnx1jpqct6ygi.us.auth0.com"
   secretKeys:
     clientId: clientid
     clientSecret: clientsecret

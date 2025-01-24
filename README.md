@@ -23,11 +23,21 @@ helm package hik8s-system --destination docs
 Render templates
 
 ```bash
-helm template hik8s-system ./hik8s-system --output-dir rendered-templates -n hik8s-system
+helm template hik8s-system ./hik8s-system --output-dir rendered-templates \
+  -n hik8s-system \
+  --set-string auth.credentials.clientId="abc" \
+  --set-string auth.credentials.clientSecret="abc"
 ```
 
 Manual installation from local
 
 ```bash
-helm install hik8s-system ./hik8s-system -n hik8s-agents-test --dry-run=client
+NAMESPACE=hik8s-system
+kubectl create namespace $NAMESPACE
+kubectl label namespace $NAMESPACE pod-security.kubernetes.io/enforce=privileged
+
+helm install hik8s-system ./hik8s-system \
+  -n $NAMESPACE \
+  --set-string auth.credentials.clientId="abc" \
+  --set-string auth.credentials.clientSecret="abc"
 ```
