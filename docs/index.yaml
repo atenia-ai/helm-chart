@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   fluvio-app:
   - apiVersion: v2
-    created: "2025-01-23T15:14:59.727553+01:00"
+    created: "2025-01-24T15:24:01.744244+01:00"
     description: A Helm chart for Fluvio
     digest: 34a7a20778631c8ba38aaea98065fe0644b4808c87d9114357b5994c2a83dc75
     name: fluvio-app
@@ -12,7 +12,7 @@ entries:
     version: 0.9.3
   fluvio-sys:
   - apiVersion: v2
-    created: "2025-01-23T15:14:59.727727+01:00"
+    created: "2025-01-24T15:24:01.744402+01:00"
     description: A Helm chart for Fluvio
     digest: 6155f8aae1d1c046340861c630c7557bf1fb8b2d860b9e4c56e1cbea89ba140c
     name: fluvio-sys
@@ -22,7 +22,16 @@ entries:
     version: 0.9.19
   hik8s-system:
   - apiVersion: v1
-    created: "2025-01-23T15:14:59.728227+01:00"
+    created: "2025-01-24T15:24:01.745001+01:00"
+    description: A Helm chart for HiK8s system components
+    digest: 00ac929653abffa836a8f729b69324e22a931140c354c3435b40a8215f8ef3dc
+    name: hik8s-system
+    type: application
+    urls:
+    - https://chart.atenia.ai/hik8s-system-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v1
+    created: "2025-01-24T15:24:01.744861+01:00"
     description: A Helm chart for HiK8s system components
     digest: ca59295bb7b556b9c844de9035b001c8b659d25a835fa8b4dff259bde85a25b9
     name: hik8s-system
@@ -31,7 +40,7 @@ entries:
     - https://chart.atenia.ai/hik8s-system-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v1
-    created: "2025-01-23T15:14:59.728069+01:00"
+    created: "2025-01-24T15:24:01.744715+01:00"
     description: A Helm chart for HiK8s system components
     digest: 7f286948f404a8952be7fa613b93a9c63073d9c38ab43ee2d0d33e673a39425e
     name: hik8s-system
@@ -40,7 +49,7 @@ entries:
     - https://chart.atenia.ai/hik8s-system-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: "2025-01-23T15:14:59.727899+01:00"
+    created: "2025-01-24T15:24:01.744565+01:00"
     description: A Helm chart for HiK8s system components
     digest: 555306c75a9596ed3211a99a9a84f45dac42b873a9b13922c08243a25a1f31b1
     name: hik8s-system
@@ -48,4 +57,4 @@ entries:
     urls:
     - https://chart.atenia.ai/hik8s-system-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-23T15:14:59.727244+01:00"
+generated: "2025-01-24T15:24:01.743964+01:00"
