@@ -25,8 +25,6 @@ Render templates
 ```bash
 helm template hik8s ./hik8s --output-dir rendered-templates \
   -n hik8s-system \
-  --set-string auth.credentials.clientId="abc" \
-  --set-string auth.credentials.clientSecret="abc" \
   --set-string auth.createSecret=false
 ```
 
@@ -40,4 +38,10 @@ helm install hik8s ./hik8s \
   -n hik8s-system \
   --set-string auth.credentials.clientId="abc" \
   --set-string auth.credentials.clientSecret="abc"
+```
+
+Uninstall chart and remove repo
+
+```bash
+helm uninstall hik8s && kubectl delete namespace hik8s-system && helm repo remove atenia
 ```

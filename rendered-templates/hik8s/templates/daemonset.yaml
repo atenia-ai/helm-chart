@@ -14,8 +14,18 @@ spec:
       labels:
         name: logd
     spec:
+      securityContext:
+        runAsNonRoot: false
+        seccompProfile:
+          type: RuntimeDefault
       containers:
       - name: logd
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0
+          runAsGroup: 0
+          capabilities:
+            drop: ["ALL"]
         image: ghcr.io/hik8s/logd:0.2.7
         imagePullPolicy: IfNotPresent
         env:
