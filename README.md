@@ -14,16 +14,16 @@ helm package fluvio-app --destination docs
 helm package fluvio-sys --destination docs
 ```
 
-## HiK8s system
+## HiK8s
 
 ```bash
-helm package hik8s-system --destination docs
+helm package hik8s --destination docs
 ```
 
 Render templates
 
 ```bash
-helm template hik8s-system ./hik8s-system --output-dir rendered-templates \
+helm template hik8s ./hik8s --output-dir rendered-templates \
   -n hik8s-system \
   --set-string auth.credentials.clientId="abc" \
   --set-string auth.credentials.clientSecret="abc" \
@@ -33,12 +33,11 @@ helm template hik8s-system ./hik8s-system --output-dir rendered-templates \
 Manual installation from local
 
 ```bash
-NAMESPACE=hik8s-system
-kubectl create namespace $NAMESPACE
-kubectl label namespace $NAMESPACE pod-security.kubernetes.io/enforce=privileged
+kubectl create namespace hik8s-system
+kubectl label namespace hik8s-system pod-security.kubernetes.io/enforce=privileged
 
-helm install hik8s-system ./hik8s-system \
-  -n $NAMESPACE \
+helm install hik8s ./hik8s \
+  -n hik8s-system \
   --set-string auth.credentials.clientId="abc" \
   --set-string auth.credentials.clientSecret="abc"
 ```

@@ -1,5 +1,5 @@
 ---
-# Source: hik8s-system/templates/deployment.yaml
+# Source: hik8s/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:

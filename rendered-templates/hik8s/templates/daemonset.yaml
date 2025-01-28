@@ -1,5 +1,5 @@
 ---
-# Source: hik8s-system/templates/daemonset.yaml
+# Source: hik8s/templates/daemonset.yaml
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
