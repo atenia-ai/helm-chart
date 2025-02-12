@@ -28,7 +28,7 @@ spec:
           runAsGroup: 1000
           capabilities:
             drop: ["ALL"]
-        image: ghcr.io/hik8s/watchd:0.2.10
+        image: ghcr.io/hik8s/watchd:0.2.12
         imagePullPolicy: IfNotPresent
         env:
         - name: HIK8S_HOST
