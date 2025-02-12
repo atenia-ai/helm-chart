@@ -26,7 +26,7 @@ spec:
           runAsGroup: 0
           capabilities:
             drop: ["ALL"]
-        image: ghcr.io/hik8s/logd:0.2.7
+        image: ghcr.io/hik8s/logd:0.2.12
         imagePullPolicy: IfNotPresent
         env:
         - name: HIK8S_HOST
