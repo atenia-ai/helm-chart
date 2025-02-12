@@ -10,7 +10,7 @@ auth:
   credentials:
     clientId: ""
     clientSecret: ""
-    domain: "dev-sksgnx1jpqct6ygi.us.auth0.com"
+    domain: ""
   secretKeys:
     clientId: clientid
     clientSecret: clientsecret
