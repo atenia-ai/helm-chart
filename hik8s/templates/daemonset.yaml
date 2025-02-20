@@ -33,7 +33,7 @@ spec:
           value: {{ .Values.logd.logLevel }}
         - name: HIK8S_PORT
           value: {{ .Values.dataIntake.port | quote }}
-        - name: AUTH0_AUDIENCE
+        - name: AUTH_AUDIENCE
           value: {{ .Values.auth.audience }}
         - name: CLIENT_ID
           valueFrom:
@@ -45,7 +45,7 @@ spec:
             secretKeyRef:
               name: {{ .Values.auth.secretName }}
               key: {{ .Values.auth.secretKeys.clientSecret }}
-        - name: AUTH0_DOMAIN
+        - name: AUTH_DOMAIN
           valueFrom:
             secretKeyRef:
               name: {{ .Values.auth.secretName }}

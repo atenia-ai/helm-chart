@@ -6,7 +6,7 @@ dataIntake:
 
 auth:
   createSecret: true
-  audience: api.hik8s.ai
+  audience: "api.hik8s.ai,data-intake"
   credentials:
     clientId: ""
     clientSecret: ""
@@ -14,7 +14,7 @@ auth:
   secretKeys:
     clientId: clientid
     clientSecret: clientsecret
-    domain: auth0domain
+    domain: authdomain
   secretName: hik8s-credentials
 
 image:
@@ -22,7 +22,7 @@ image:
   pullPolicy: IfNotPresent
 
 watchd:
-  imageVersion: 0.2.12
+  imageVersion: 0.3.0
   logLevel: info
   nodeSelector: {}
   rbac:
@@ -33,6 +33,6 @@ watchd:
 
 
 logd:
-  imageVersion: 0.2.12
+  imageVersion: 0.3.0
   logLevel: info
   nodeSelector: {}

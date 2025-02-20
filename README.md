@@ -36,6 +36,7 @@ kubectl label namespace hik8s-system pod-security.kubernetes.io/enforce=privileg
 
 helm install hik8s ./hik8s \
   -n hik8s-system \
+  --set-string auth.credentials.domain="abc" \
   --set-string auth.credentials.clientId="abc" \
   --set-string auth.credentials.clientSecret="abc"
 ```
