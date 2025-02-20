@@ -22,7 +22,7 @@ image:
   pullPolicy: IfNotPresent
 
 watchd:
-  imageVersion: 0.2.12
+  imageVersion: 0.3.0
   logLevel: info
   nodeSelector: {}
   rbac:
@@ -33,6 +33,6 @@ watchd:
 
 
 logd:
-  imageVersion: 0.2.12
+  imageVersion: 0.3.0
   logLevel: info
   nodeSelector: {}
