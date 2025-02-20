@@ -28,7 +28,7 @@ spec:
           runAsGroup: 1000
           capabilities:
             drop: ["ALL"]
-        image: ghcr.io/hik8s/watchd:0.2.12
+        image: ghcr.io/hik8s/watchd:0.3.0
         imagePullPolicy: IfNotPresent
         env:
         - name: HIK8S_HOST
@@ -37,8 +37,8 @@ spec:
           value: info
         - name: HIK8S_PORT
           value: "443"
-        - name: AUTH0_AUDIENCE
-          value: api.hik8s.ai
+        - name: AUTH_AUDIENCE
+          value: api.hik8s.ai,data-intake
         - name: CLIENT_ID
           valueFrom:
             secretKeyRef:
@@ -49,9 +49,9 @@ spec:
             secretKeyRef:
               name: hik8s-credentials
               key: clientsecret
-        - name: AUTH0_DOMAIN
+        - name: AUTH_DOMAIN
           valueFrom:
             secretKeyRef:
               name: hik8s-credentials
-              key: auth0domain
+              key: authdomain
       serviceAccountName: api-viewer
