@@ -6,7 +6,7 @@ dataIntake:
 
 auth:
   createSecret: true
-  audience: api.hik8s.ai
+  audience: "api.hik8s.ai,data-intake"
   credentials:
     clientId: ""
     clientSecret: ""
