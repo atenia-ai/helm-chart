@@ -14,7 +14,7 @@ auth:
   secretKeys:
     clientId: clientid
     clientSecret: clientsecret
-    domain: auth0domain
+    domain: authdomain
   secretName: hik8s-credentials
 
 image:
